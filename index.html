@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Health and Fitness Hub</title>
+    <style>
+        /* General Style */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* Header Style */
+        header {
+            background-color: #00aaff;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            animation: slideInLeft 1.5s ease-out;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        /* Navigation */
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #ffdd57;
+        }
+
+        /* Section Style */
+        .section {
+            padding: 40px 20px;
+            text-align: center;
+            animation: fadeIn 3s ease-out;
+        }
+
+        .section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            animation: bounceInUp 1s ease-out;
+        }
+
+        .plans-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            animation: fadeInUp 2s ease-out;
+        }
+
+        .plan {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            width: 250px;
+            animation: zoomIn 1s ease-out;
+        }
+
+        .plan h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .plan a {
+            color: #00aaff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .plan a:hover {
+            color: #ffdd57;
+        }
+
+        /* Hover Animations */
+        .plan:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: shake 1s ease;
+        }
+
+        /* Blog Posts */
+        .blog-posts {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            animation: fadeInUp 2.5s ease-out;
+        }
+
+        .post {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            width: 250px;
+            animation: flipInX 1s ease-in-out;
+        }
+
+        .post h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-top: 40px;
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        /* Progress Tracker */
+        canvas {
+            max-width: 600px;
+            margin: 20px auto;
+            animation: zoomIn 2s ease-out;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes slideInLeft {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(0); }
+        }
+
+        @keyframes bounceInUp {
+            0% { transform: translateY(100%); opacity: 0; }
+            60% { transform: translateY(-20px); opacity: 1; }
+            80% { transform: translateY(10px); }
+            100% { transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes zoomIn {
+            0% { transform: scale(0); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            50% { transform: translateX(10px); }
+            75% { transform: translateX(-10px); }
+            100% { transform: translateX(0); }
+        }
+
+        @keyframes flipInX {
+            0% { transform: rotateX(90deg); opacity: 0; }
+            100% { transform: rotateX(0); opacity: 1; }
+        }
+
+    </style>
+</head>
+<body>
+<!-- Header -->
+<header>
+    <nav>
+        <ul>
+            <li><a href="#workouts">Workout Plans</a></li>
+            <li><a href="#nutrition">Nutrition Advice</a></li>
+            <li><a href="#progress">Progress Tracker</a></li>
+            <li><a href="#blog">Fitness Blog</a></li>
+            <li><a href="#classes">Online Coaching</a></li>
+            <li><a href="#store">Store</a></li>
+        </ul>
+    </nav>
+    <h1>Welcome to Health & Fitness Hub</h1>
+    <p>Your ultimate guide to fitness, nutrition, and wellness!</p>
+</header>
+
+<!-- Workout Plans -->
+<section id="workouts" class="section">
+    <h2>Workout Plans</h2>
+    <div class="plans-container">
+        <div class="plan">
+            <h3>Beginner Plan</h3>
+            <p>This plan is perfect for newcomers to fitness. It focuses on low-impact exercises that build stamina and strength. Includes 3 workouts per week:</p>
+            <ul>
+                <li>Day 1: Full-body workout (Bodyweight exercises)</li>
+                <li>Day 2: Cardio (Brisk walk or light jog for 30 minutes)</li>
+                <li>Day 3: Core Strength (Planks, crunches, leg raises)</li>
+            </ul>
+            <a href="#">View Plan</a>
+        </div>
+        <div class="plan">
+            <h3>Intermediate Plan</h3>
+            <p>This plan is designed for those who have been training for a while. It incorporates strength training and more complex exercises for muscle growth. 4-5 workouts per week:</p>
+            <ul>
+                <li>Day 1: Upper body (Push-ups, dumbbell press, bicep curls)</li>
+                <li>Day 2: Lower body (Squats, lunges, deadlifts)</li>
+                <li>Day 3: Cardio (HIIT workouts)</li>
+                <li>Day 4: Full-body workout (Resistance bands and bodyweight exercises)</li>
+            </ul>
+            <a href="#">View Plan</a>
+        </div>
+        <div class="plan">
+            <h3>Advanced Plan</h3>
+            <p>Take your fitness to the next level with this intense plan. Focuses on strength, endurance, and high-intensity interval training (HIIT). 5-6 days per week:</p>
+            <ul>
+                <li>Day 1: Powerlifting (Squats, deadlifts, bench press)</li>
+                <li>Day 2: HIIT (High-intensity interval training)</li>
+                <li>Day 3: Endurance training (Running or cycling for 45 minutes)</li>
+                <li>Day 4: Core and Abs (Russian twists, leg raises, flutter kicks)</li>
+                <li>Day 5: Active Recovery (Yoga or swimming)</li>
+            </ul>
+            <a href="#">View Plan</a>
+        </div>
+    </div>
+</section>
+
+<!-- Nutrition Advice -->
+<section id="nutrition" class="section">
+    <h2>Nutrition Advice</h2>
+    <p>Fuel your body with healthy meals to optimize your performance. Here are some of our top recommendations:</p>
+    <ul>
+        <li><a href="#">Healthy Breakfast Ideas: Start your day right with these nutritious meals!</a></li>
+        <li><a href="#">Meal Prep for Success: Save time and stay on track with these easy meal prep ideas.</a></li>
+        <li><a href="#">Supplements: What You Need to Know: Learn about essential vitamins and minerals to support your workouts.</a></li>
+        <li><a href="#">Hydration Tips: How much water should you really drink each day? Find out here!</a></li>
+    </ul>
+</section>
+
+<!-- Progress Tracker -->
+<section id="progress" class="section">
+    <h2>Track Your Progress</h2>
+    <canvas id="progress-chart"></canvas>
+</section>
+
+<!-- Fitness Blog -->
+<section id="blog" class="section">
+    <h2>Fitness Blog</h2>
+    <div class="blog-posts">
+        <div class="post">
+            <h3>How to Build Muscle Without Weights</h3>
+            <p>You don’t need a gym membership to build muscle. Learn bodyweight exercises that can help you grow stronger and more toned wherever you are!</p>
+            <a href="#">Read More</a>
+        </div>
+        <div class="post">
+            <h3>The Science of Hydration</h3>
+            <p>Find out why hydration is so important for your health, fitness, and recovery. Get the facts on how much water you really need!</p>
+            <a href="#">Read More</a>
+        </div>
+    </div>
+</section>
+
+<!-- Online Coaching -->
+<section id="classes" class="section">
+    <h2>Online Coaching</h2>
+    <p>Get personalized fitness training from professional coaches online. We offer one-on-one coaching for all fitness levels.</p>
+    <ul>
+        <li><a href="#">Book a Session with a Personal Trainer</a></li>
+        <li><a href="#">Join Our Virtual Bootcamp</a></li>
+        <li><a href="#">Nutrition Coaching for Optimal Health</a></li>
+        <li><a href="#">Group Fitness Classes via Zoom</a></li>
+    </ul>
+</section>
+
+<!-- Fitness Store -->
+<section id="store" class="section">
+    <h2>Fitness Store</h2>
+    <p>Shop our wide selection of fitness products to elevate your home workouts or gym experience.</p>
+    <ul>
+        <li><a href="#">Resistance Bands - Perfect for strength training at home.</a></li>
+        <li><a href="#">Dumbbells - Add weights to your strength training routine.</a></li>
+        <li><a href="#">Yoga Mats - Comfortable mats for your practice.</a></li>
+        <li><a href="#">Protein Supplements - Boost your nutrition with top-quality supplements.</a></li>
+    </ul>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2024 Health and Fitness Hub. All rights reserved.</p>
+</footer>
+</body>
+</html>
